@@ -1,0 +1,209 @@
+* {
+  box-sizing: border-box;
+}
+:root {
+  --aspect-ratio: calc(5246.15 / 7462.26);
+  --height: 40;
+  --width: calc(var(--height) * var(--aspect-ratio));
+  --stroke: #1a1a1a;
+  --orion-light: #f7a76e;
+  --orion: #df8020;
+  --orion-dark: #d17729;
+  --orion-stroke: #5c410a;
+  --collar: #c33;
+  --nose: #f5b1a3;
+  --white: #fcfcfc;
+  --space-blob: #610f8a;
+  --space-backdrop: #2d1339;
+  --belt: #e6b319;
+  --belt-light: #fae39e;
+  --shimmer: rgba(255,255,255,0.95);
+  --turtle: #66a329;
+  --turtle-light: #99d65c;
+  --turtle-dark: #335214;
+  --turtle-darker: #263d0f;
+  --turtle-darkest: #1a290a;
+  --socket: #a3ccf5;
+  --turtle-shell: #5a3311;
+  --turtle-shell-light: #f0caa8;
+  --turtle-shell-groove: #3f250d;
+  --turtle-shell-lip: #e6b319;
+  --turtle-under-shell: #8a6b0f;
+  --tank-shine: #ccc;
+  --tank-body: #666;
+  --tank-end: #999;
+  --tank-cable: #f07575;
+  --helmet-collar: #666;
+  --helmet-glass: #a3f5f5;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #f6fefe;
+}
+.space {
+  fill: var(--space-backdrop);
+}
+.space-blob {
+  fill: var(--space-blob);
+}
+.shimmer-stroke {
+  stroke: var(--shimmer);
+}
+.helmet__glass {
+  fill: var(--helmet-glass);
+}
+.helmet__collar {
+  stroke: var(--helmet-collar);
+}
+.tank__shine {
+  fill: var(--tank-shine);
+}
+.tank__body {
+  fill: var(--tank-body);
+}
+.tank__end {
+  fill: var(--tank-end);
+}
+.tank__socket {
+  fill: var(--socket);
+}
+.tank__cable {
+  stroke: var(--tank-cable);
+}
+.blob {
+  fill: hsl(280, 80%, calc(var(--lightness, 50) * 1%));
+}
+.star {
+  fill: hsl(45, 80%, calc(var(--lightness, 50) * 1%));
+}
+.belt--fill {
+  fill: var(--belt);
+}
+.belt--stroke {
+  stroke: var(--belt);
+}
+.belt--fill-light {
+  fill: var(--belt-light);
+}
+.belt--stroke-light {
+  stroke: var(--belt-light);
+}
+.stroke {
+  stroke: var(--stroke);
+}
+.orion {
+  height: calc(var(--height) * 1vmin);
+  width: calc(var(--width) * 1vmin);
+  overflow: visible;
+  opacity: 0;
+}
+.orion__eye {
+  fill: var(--stroke);
+}
+.orion__nose {
+  fill: var(--nose);
+}
+.orion__muzzle {
+  fill: var(--white);
+}
+.orion__collar {
+  stroke: var(--collar);
+}
+.orion--light {
+  fill: var(--orion-light);
+}
+.orion--medium {
+  fill: var(--orion);
+}
+.orion--dark {
+  fill: var(--orion-dark);
+}
+.orion--stroke {
+  stroke: var(--orion-stroke);
+}
+.turtle {
+  height: 50vmin;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+}
+.turtle__eye {
+  fill: var(--stroke);
+}
+.turtle__mouth {
+  fill: var(--turtle-dark);
+}
+.turtle__shell {
+  fill: var(--turtle-shell);
+}
+.turtle__shell-light {
+  fill: var(--turtle-shell-light);
+}
+.turtle__under-shell {
+  fill: var(--turtle-under-shell);
+}
+.turtle__shell-lip {
+  stroke: var(--turtle-shell-lip);
+}
+.turtle__shell-groove {
+  stroke: var(--turtle-shell-groove);
+}
+.turtle__flipper path:nth-of-type(1) {
+  fill: var(--turtle-light);
+}
+.turtle__flipper path:nth-of-type(2) {
+  fill: var(--turtle-dark);
+}
+.turtle__flipper--back path:nth-of-type(1) {
+  fill: var(--turtle-darker);
+}
+.turtle__flipper--back path:nth-of-type(2) {
+  fill: var(--turtle-darkest);
+}
+label {
+  height: 44px;
+  width: 44px;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  cursor: pointer;
+}
+label > svg {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+label path {
+  fill: #b8e0e0;
+}
+label svg:nth-of-type(1) {
+  display: none;
+}
+[type='checkbox'] {
+  opacity: 0;
+  position: absolute;
+  height: 0;
+  width: 0;
+}
+:checked ~ label svg:nth-of-type(1) {
+  display: block;
+}
+:checked ~ label svg:nth-of-type(2) {
+  display: none;
+}
+h1 {
+  font-family: sans-serif;
+  font-size: 4rem;
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  margin: 0;
+  color: #b8e0e0;
+  z-index: -1;
+}
